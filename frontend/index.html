@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basic Video Call -- Agora</title>
+  <link rel="stylesheet" href="./vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+ <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">InstantCall</a>
+</nav>
+  <div class="d-flex align-items-center justify-content-center" id="join_form" >
+    <form class="join-form">
+      <input type="text" name="name" id="usr_name">
+      <button id="join_meet" type="button" class="btn btn-primary btn-sm" >Join</button>
+    </form>
+  </div>
+
+  <div id="main" class="container-fluid" style="display:none">
+    <form id="join-form2">
+
+      <div class="button-group float-right">
+        <!-- <button id="join" type="submit" class="btn btn-primary btn-sm">Join</button> -->
+        <button id="leave" type="button" class="btn btn-danger btn-sm" >Leave</button>
+        <!-- <button id="record" type="button" class="btn btn-primary btn-sm" >rec</button> -->
+      </div>
+    </form>
+    <div class="w-100" style="margin-bottom: 1rem;"></div>
+
+    <div class="row video-group">
+      <div class="col">
+        <p id="local-player-name" class="player-name"></p>
+        <div id="local-player" class="player"></div>
+      </div>
+      <div class="w-100"></div>
+      
+    </div>
+    <div class="container-fluid float-left card" style="width:80%;">
+      <div id="remote-playerlist"class="row"></div>
+    </div>
+  </div>
+  <script src="./vendor/jquery-3.4.1.min.js"></script>
+  <script src="./vendor/bootstrap.bundle.min.js"></script>
+  <script src="./AgoraRTC_N-4.10.2.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
