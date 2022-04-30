@@ -208,12 +208,14 @@ async function mood (uri)  {
   expList.push(det.surprised);
 
   var maxId = expList.indexOf(Math.max(...expList));
-
+  var score;
   if(maxId <= 3){
-      console.log(Math.round(1 - expList[maxId]) * 10);
+      score = Math.round(1 - expList[maxId]) * 10;
   }
   else {
-      console.log(Math.ceil(expList[maxId]) * 10);
+      score = Math.ceil(expList[maxId]) * 10;
   }
+  xmlHttp.open( "GET", "http://databaseeducall.000webhostapp.com/insertbuffer.php?name="+name_part+"&score="+score, true );
+  xmlHttp.send(null);
 };
 
